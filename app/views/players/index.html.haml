@@ -6,3 +6,7 @@
 = text_field_tag 'set_2', 'set 2'
 = text_field_tag 'set_3', 'set 3'
 = submit_tag 'get winner'
+
+%ul
+  - @players.each do |player|
+    %li= player.email
