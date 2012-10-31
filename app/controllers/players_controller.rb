@@ -23,6 +23,7 @@ class PlayersController < ApplicationController
     @set_1 = params[:set_1].split(',').map(&:to_i)
     @set_2 = params[:set_2].split(',').map(&:to_i)
     @set_3 = params[:set_3].split(',').map(&:to_i)
+      #@player_one_rank = Player.find_by_first_name(@player_1).ladder_rank
 
     a = @set_1[0].to_i
     b = @set_1[1].to_i
@@ -31,19 +32,24 @@ class PlayersController < ApplicationController
     e = @set_3[0].to_i
     f = @set_3[1].to_i
 
-    if ((a + c + e) > (b + d + f)) then 
-      @winner = @player_1
-    elsif ((a + c + e) < (b + d + f)) then 
-      @winner = @player_2
-    else
-      @winner = "draw"
+    if ((a + c + e) > (b + d + f)) then @winner = @player_1, @loser = @player_2
+    elsif ((a + c + e) < (b + d + f)) then @winner = @player_2, @loser = @player_1
+    else  @winner = nil, @loser = nil
     end
   end
 
   def show
   end
 
-   protected 
-    def compute_winner(player_1, player_2, set_1, set_2, set_3=[0,0])
+    def update_rank
+      @player_one_rank = Player.find_by_first_name(@player_1).ladder_rank
+      @player_two_rank = Player.find_by_first_name(@player_2).ladder_rank
+      if @player_one_rank > @player_two_rank && @player_1 == @winner
+        @new_player_one_rank = @player_one_rank
+        @new_player_two_rank = @player_two_rank
+      elsif @player_one_rank > @player_two_rank && @player_one != @winner
+        @new_player_one_rank = @player_one_rank - 1
+        @new_player_two_rank = @player_two_rank + 4
+      end
     end
 end
