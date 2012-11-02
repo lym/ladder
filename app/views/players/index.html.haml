@@ -1,23 +1,35 @@
+%div{:class => "navbar navbar-fixed-top"}
+  %div{:class => "navbar-inner"}
+    %div{:class => "container-fluid"}
+      %div{:class => "nav-collapse"}
+        %ul{ :class => "nav"}
+          %li{ :class => "active" }
+            =link_to(image_tag("home_24x24.png"), "/")
+          %li
+            =link_to "Login", "#"
 .container-fluid
   .row-fluid
     .span12
-      = form_tag :action => 'find_winner'
-      = text_field_tag 'player_1', 'Player 1'
-      = text_field_tag 'player_2', 'Player 2'
-      = text_field_tag 'set_1', 'set 1'
-      = text_field_tag 'set_2', 'set 2'
-      = text_field_tag 'set_3', 'set 3'
-      = submit_tag 'get winner'
+      .leaderboard
+        %h1 Ladder Manager
   .row-fluid
     .span3
       %div{:class => "well sidebar-nav"}
         %ul{:class => "nav nav-list"}
           %li{:class => "nav-header"} Options
           %li{:class => "active"}
-            =link_to "Upcoming Matches", "#"
-            =link_to "Check Individual stats", "#"
-            =link_to "Compare head-to-heads", "#"
-            =link_to "See who you can challenge", "#"
+            =link_to "Current Ladder Standings", "/"
+          %li=link_to "Upcoming Matches", :action => "scheduled_matches"
+          %li=link_to "Check Individual stats", "#"
+          %li=link_to "Compare head-to-heads", "#"
+          %li=link_to "See who you can challenge", "#"
+          = form_tag :action => 'find_winner'
+          = text_field_tag 'player_1', 'Player 1'
+          = text_field_tag 'player_2', 'Player 2'
+          = text_field_tag 'set_1', 'set 1'
+          = text_field_tag 'set_2', 'set 2'
+          = text_field_tag 'set_3', 'set 3'
+          = submit_tag 'get winner'
     .span9
       %table{ :class => "table stripped-table" }
         %thead

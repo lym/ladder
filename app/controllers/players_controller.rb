@@ -17,6 +17,14 @@ class PlayersController < ApplicationController
   def destroy
   end
 
+  def get_challenge
+    @challenger = Params[:challenger]
+  end
+  
+  def scheduled_matches
+    @matches = Match.all
+  end
+
   def find_winner
     @player_1 = params[:player_1]
     @player_2 = params[:player_2]
