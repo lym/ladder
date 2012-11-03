@@ -1,4 +1,6 @@
 Ladder::Application.routes.draw do
+  devise_for :users
+
   get "players/index"
 
   get "players/show"
