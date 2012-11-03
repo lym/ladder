@@ -12,7 +12,7 @@
             =link_to "Current Ladder Standings", "/"
           %li=link_to "Upcoming Matches", :action => "scheduled_matches"
           %li=link_to "Check Individual stats", "#"
-          %li=link_to "Compare head-to-heads", "#"
+          %li=link_to "Compare head-to-heads", :action => "get_comparisons"
           %li=link_to "See who you can challenge", "#"
           = form_tag :action => 'find_winner'
           = text_field_tag 'player_1', 'Player 1'

@@ -1,4 +1,15 @@
-- @matches.each do |match|
-  =match.challenger
-  =match.opponent
-  =match.match_date
+.container-fluid
+  .row-fluid
+    .span8
+      %table{ :class => "table stripped-table" }
+        %thead
+          %tr
+            %th Challenger
+            %th Opponent
+            %th Match Date
+        %tbody
+          - @matches.each do |match|
+            %tr
+              %td= match.challenger
+              %td= match.opponent
+              %td= match.match_date.to_formatted_s(:long)

@@ -20,6 +20,8 @@ Ladder::Application.routes.draw do
   post "players/find_winner"
 
   get "players/scheduled_matches"
+
+  get "players/get_comparisons"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

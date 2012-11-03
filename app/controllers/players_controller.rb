@@ -25,6 +25,10 @@ class PlayersController < ApplicationController
     @matches = Match.all
   end
 
+  def get_comparisons
+    @head_to_heads = HeadtoHead.all
+  end
+
   def find_winner
     @player_1 = params[:player_1]
     @player_2 = params[:player_2]
