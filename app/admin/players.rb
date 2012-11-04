@@ -16,5 +16,4 @@ ActiveAdmin.register Player do
   filter :amount_paid
   filter :balance
   filter :ladder_rank
-  
 end
