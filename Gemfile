@@ -22,6 +22,20 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'rspec-rails'
+  gem 'cucumber'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'cucumber'
+end
+
+group :production do
+  gem 'thin'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -42,3 +56,4 @@ gem 'formtastic'
 gem 'devise'
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
+gem 'heroku'

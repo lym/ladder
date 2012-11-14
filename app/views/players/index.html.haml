@@ -11,30 +11,28 @@
           %li{:class => "active"}
             =link_to "Current Ladder Standings", "/"
           %li=link_to "Upcoming Matches", :action => "scheduled_matches"
-          %li=link_to "Check Individual stats", "#"
+          %li=link_to "Check your stats", "#"
           %li=link_to "Compare head-to-heads", :action => "get_comparisons"
           %li=link_to "See who you can challenge", "#"
-          = form_tag :action => 'find_winner'
-          = text_field_tag 'player_1', 'Player 1'
-          = text_field_tag 'player_2', 'Player 2'
-          = text_field_tag 'set_1', 'set 1'
-          = text_field_tag 'set_2', 'set 2'
-          = text_field_tag 'set_3', 'set 3'
-          = submit_tag 'get winner'
+          /= form_tag :action => 'find_winner'
+          /= text_field_tag 'player_1', 'Player 1'
+          /= text_field_tag 'player_2', 'Player 2'
+          /= text_field_tag 'set_1', 'set 1'
+          /= text_field_tag 'set_2', 'set 2'
+          /= text_field_tag 'set_3', 'set 3'
+          /= submit_tag 'get winner'
     .span9
       %table{ :class => "table stripped-table" }
         %thead
           %tr
             %th Rank
-            %th First name
-            %th Last name
+            %th Name
             %th Phone Number
             %th Email
         %tbody
           - @players.each do |player|
             %tr 
               %td= player.ladder_rank
-              %td= player.first_name
-              %td= player.last_name
+              %td= player.first_name + "\t" +  player.last_name
               %td= player.phone_number
               %td= player.email

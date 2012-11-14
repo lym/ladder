@@ -44,9 +44,9 @@ class PlayersController < ApplicationController
     e = @set_3[0].to_i
     f = @set_3[1].to_i
 
-    if ((a + c + e) > (b + d + f)) then @winner = @player_1, @loser = @player_2
-    elsif ((a + c + e) < (b + d + f)) then @winner = @player_2, @loser = @player_1
-    else  @winner = nil, @loser = nil
+    if ((a + c + e) > (b + d + f)) then @winner = @player_1; @loser = @player_2
+    elsif ((a + c + e) < (b + d + f)) then @winner = @player_2; @loser = @player_1
+    else  @winner = nil; @loser = nil
     end
   end
 
