@@ -51,9 +51,6 @@ Player.create!( :first_name => "Murumu", :last_name => "Myers", :phone_number =>
 Player.create!( :first_name => "Yiga", :last_name => "Ceaser", :phone_number => "0774616740",
                 :email => "ceasersenior@hotmail.co.uk", :amount_paid => 20000, :balance => 0000,
                 :ladder_rank => 15 )
-Player.create!( :first_name => "John Fitz", :last_name => "Gerald", :phone_number => "0772917282",
-                :email => "jssenkusu@gmail.com", :amount_paid => 20000, :balance => 0000,
-                :ladder_rank => 16 )
 Player.create!( :first_name => "Seruwagi", :last_name => "Ivan", :phone_number => "0782221616",
                 :email => "seruwagiivan@gmail.com", :amount_paid => 20000, :balance => 0000,
                 :ladder_rank => 17 )
@@ -114,3 +111,9 @@ Player.create!( :first_name => "Egesa", :last_name => "Tom", :phone_number => "0
 Player.create!( :first_name => "Omara", :last_name => "Daniel", :phone_number => "0776831850",
                 :email => "odanny12@yahoo.com", :amount_paid => 10000, :balance => 10000,
                 :ladder_rank => 36 )
+
+puts 'SETTING UP DEFAULT USER LOGIN'
+user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user.name
+user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user2.name
