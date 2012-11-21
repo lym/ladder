@@ -3,7 +3,7 @@ Ladder::Application.routes.draw do
   get "home/show"
 
   authenticated :user do
-    root :to => 'players#index'
+    root :to => 'home#index'
   end
 
   #root :to => "home#index"
