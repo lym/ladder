@@ -54,6 +54,9 @@ class PlayersController < ApplicationController
   def show
   end
 
+  def rules
+  end
+
     def update_rank
       @player_one_rank = Player.find_by_first_name(@player_1).ladder_rank
       @player_two_rank = Player.find_by_first_name(@player_2).ladder_rank
