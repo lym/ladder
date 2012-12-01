@@ -19,7 +19,33 @@
           .row
             .span12
               = render 'layouts/messages'
+        .container-fluid
+          .row-fluid
+            .span12
+              .leaderboard
+                %h1 Ladder Manager
+          .row-fluid
+            .span3
+              %div{:class => "well sidebar-nav"}
+                %ul{:class => "nav nav-list"}
+                  %li{:class => "nav-header"} Options
+                  %li{:class => "active"}
+                    =link_to "Current Ladder Standings", root_path
+                  %li=link_to "Upcoming Matches", players_scheduled_matches_path
+                  %li=link_to "Check your stats", players_check_stats_path
+                  %li=link_to "Compare head-to-heads", players_get_comparisons_path
+                  %li=link_to "See who you can challenge", "#"
+                  %li=link_to "Rules and Regulations", players_rules_path
+                  %li=link_to( "Edit Head to Head", '#') if user_signed_in?
+                  /= form_tag :action => 'find_winner'
+                  /= text_field_tag 'player_1', 'Player 1'
+                  /= text_field_tag 'player_2', 'Player 2'
+                  /= text_field_tag 'set_1', 'set 1'
+                  /= text_field_tag 'set_2', 'set 2'
+                  /= text_field_tag 'set_3', 'set 3'
+                  /= submit_tag 'get winner'
+            .span9
               = yield
-          %footer
-            = render :partial => 'layouts/footer'
-            = debug(params) if Rails.env.development?
+              %footer
+                = render :partial => 'layouts/footer'
+                = debug(params) if Rails.env.development?

@@ -1,19 +1,16 @@
-.container-fluid
-  .row-fluid
-    .span8
-      %table{ :class => "table stripped-table" }
-        %thead
-          %tr
-            %th Player 1
-            %th Player 2
-            %th Total Matches 
-            %th Player 1 wins
-            %th Player 2 wins
-        %tbody
-          - @head_to_heads.each do |comparison|
-            %tr
-              %td= comparison.player_1
-              %td= comparison.player_2
-              %td= comparison.total_games_played
-              %td= comparison.player_1_wins
-              %td= comparison.player_2_wins
+%table{ :class => "table stripped-table" }
+  %thead
+    %tr
+      %th Player 1
+      %th Player 2
+      %th Total Matches 
+      %th Player 1 wins
+      %th Player 2 wins
+  %tbody
+    - @head_to_heads.each do |comparison|
+      %tr
+        %td= comparison.player_1
+        %td= comparison.player_2
+        %td= comparison.total_games_played
+        %td= comparison.player_1_wins
+        %td= comparison.player_2_wins
