@@ -33,3 +33,4 @@ gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'heroku'
 gem "launchy", ">= 2.1.0", :group => :test
+gem "simple_form"
