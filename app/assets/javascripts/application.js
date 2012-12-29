@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
-/*$('document').ready(function() {
+$('document').ready(function() {
   
   // display validation errors for the "request invitation" form
   if ($('.alert-error').length > 0) {
@@ -23,13 +23,11 @@
   
   // use AJAX to submit the "request invitation" form
   $('#invitation_button').live('click', function() {
-    var email = $('form #user_email').val();
-    var opt_in;
-    if($('form #user_opt_in').is(':checked'))
-        opt_in = true;
-    else
-        opt_in = false;
-    var dataString = 'user[email]='+ email + '&user[opt_in]=' + opt_in;
+    var user_name = $('form #user_name').val();
+    var user_email = $('form #user_email').val()
+    var user_password = $('form #user_password').val()
+    var user_password_confirmation = $('form #user_password_confirmation').val()
+    var dataString = 'user[name]='+ name + 'user[email]=' + email + 'user[password]=' + password + 'user[password_confirmation]=' + password_confirmation;
     $.ajax({
       type: "POST",
       url: "/users",
@@ -43,4 +41,3 @@
   });
   
 }) 
-*/
