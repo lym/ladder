@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.8.2
+//= require jquery-ui-1.9.0.custom.min
+//= require jquery-ui-tabs-rotate
 //= require_tree .
 
 $('document').ready(function() {
@@ -39,5 +42,5 @@ $('document').ready(function() {
     });
     return false;
   });
-  
-}) 
+
+})

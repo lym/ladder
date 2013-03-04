@@ -13,6 +13,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'better_errors'
+end
+
 group :production do
   gem 'thin'
 end
@@ -34,3 +38,4 @@ gem 'meta_search', '>= 1.1.0.pre'
 gem 'heroku'
 gem "launchy", ">= 2.1.0", :group => :test
 gem "simple_form"
+gem 'jquery-ui-rails'

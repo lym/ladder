@@ -1,0 +1,55 @@
+%div{:class => 'leaderboard'}
+  %div{:id => "featured"}
+    %ul{:class => "ui-tabs-nav"}
+      %li{:class => "ui-tabs-nav-item", :id => "nav-fragment-1"}
+        =link_to '#fragment-1' do
+          =image_tag 'kid_wim.jpg', :size => '80x50', :alt => ""
+          %span A kid practising during a charity event at the Wimbledon Championships
+      %li{:class => "ui-tabs-nav-item", :id => "nav-fragment-2"}
+        =link_to '#fragment-2' do
+          =image_tag 'kvitova.jpg', :size => '80x50', :alt => ""
+          %span Wimbledon ladies champion Petra Kvitova playing a shot.
+      %li{:class => "ui-tabs-nav-item", :id => "nav-fragment-3"}
+        =link_to '#fragment-3' do
+          =image_tag 'roger_basel.jpg', :size => '80x50', :alt => ""
+          %span The always magnificent Swiss, Roger Federer.
+      %li{:class => "ui-tabs-nav-item", :id => "nav-fragment-4"}
+        =link_to '#fragment-4' do
+          =image_tag 'vika_mauresmo.jpg', :size => '80x50', :alt => ""
+          %span Retired wta tour player Amelie Mauresmo with Victoria Azarenka.
+
+    / First Content
+    %div{:id => "fragment-1", :class => "ui-tabs-panel", :style => ""}
+      =image_tag "kid_wim.jpg", :size => '400x250', :alt => ""
+      %div{:class => "info"}
+        %h2=link_to "A kid practising during a charity event at the Wimbledon Championships", '#'
+        %p 
+          Lorem ipsum dolor sit amet, consecteur adipiscing elit. Nulla tincidunt condimentum lacus. Pellentesque ut diam....
+          =link_to 'readmore', '#' 
+
+    / Second Content 
+    %div{:id => "fragment-2", :class => "ui-tabs-panel ui-tabs-hide", :style => ""}
+      =image_tag "kvitova.jpg", :size => '400x250', :alt => ""
+      %div{:class => "info"}
+        %h2=link_to 'Kvitova in Paris', '#'
+        %p
+          Wimbledon ladies champion Petra Kvitova playing a shot during a clay court tournament.
+          =link_to 'read more', '#'
+
+    / Third Content 
+    %div{:id => "fragment-3", :class => "ui-tabs-panel ui-tabs-hide", :style => ""}
+      =image_tag 'roger_basel.jpg', :size => '400x250', :alt => ""
+      %div{:class => "info"}
+        %h2=link_to "Roger in Basel", "#"
+        %p
+          Roger plays back at shot at a recent tournament
+          =link_to 'read more', '#'
+
+    / Fourth Content 
+    %div{:id => "fragment-4", :class => "ui-tabs-panel ui-tabs-hide", :style => ""}
+      =image_tag "vika_mauresmo.jpg", :size => '400x250', :alt => ""
+      %div{:class => "info"}
+        %h2=link_to "Mauresmo and Victoria Azarenka", "#"
+        %p
+          Former Wimbledon ladies champion Amerie Mauresmo advises Victoria Azarenka on how to win a match
+          =link_to 'read more', '#'
